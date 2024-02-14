@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import './components/header/Megamenu.css'
 
-const Megamenu = () => {
+const Slider = () => {
+    const [slideIndex, setSlideIndex] = useState(1);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        plusSlides(1);
+      }, 4000);
+      return () => clearInterval(interval);
+    }, [slideIndex]);
+  
+    const plusSlides = (n) => {
+      showSlides(slideIndex + n);
+    };
+  
+    const showSlides = (n) => {
+      let newIndex = n;
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        newIndex = 1;
+      }
+      if (n < 1) {
+        newIndex = slides.length;
+      }
+      setSlideIndex(newIndex);
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[newIndex - 1].style.display = "block";
+    };
+  
     return (
       <div className="slideshow-container">
         <div className="mySlides">
@@ -15,6 +45,5 @@ const Megamenu = () => {
       </div>
     );
   };
-  // Attach Headernav to the window object
- window.Megamenu = Megamenu;
-  export default Megamenu;
+  
+  export default Slider;
