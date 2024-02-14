@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './components/header/Megamenu.css'
 
-const Slider = () => {
+const Megamenu = () => {
     const [slideIndex, setSlideIndex] = useState(1);
   
     useEffect(() => {
@@ -37,7 +37,7 @@ const Slider = () => {
           <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
         </div>
         <div className="mySlides">
-          <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+          <q>But man is not made for defeat.</q>
         </div>
         <div className="mySlides">
           <q>I have not failed. I've just found 10,000 ways that won't work.</q>
@@ -46,4 +46,4 @@ const Slider = () => {
     );
   };
   
-  export default Slider;
+  export default Megamenu;
