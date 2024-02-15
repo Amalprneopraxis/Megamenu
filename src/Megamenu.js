@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './components/header/Megamenu.css'
 
 const Megamenu = () => {
-    const [slideIndex, setSlideIndex] = useState(1);
+    const [slideIndex, setSlideIndex] = useState('1');
   
     useEffect(() => {
       const interval = setInterval(() => {
