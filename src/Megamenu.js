@@ -45,5 +45,6 @@ const Megamenu = () => {
       </div>
     );
   };
-  
-  export default Megamenu;
+  // Attach Headernav to the window object
+   window.Megamenu = Megamenu;
+   export default Megamenu;
