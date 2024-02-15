@@ -31,4 +31,9 @@ module.exports = {
       
     ],
   },
+  externals: {
+    // Specify external dependencies here
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
 };
