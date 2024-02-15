@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require('path');
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
     library: 'Megamenu', // Name of the library
     libraryTarget: 'umd', // Output module format
     umdNamedDefine: true, // Define the module's name for AMD
-    globalObject: 'this' // Define the global object used,
+    globalObject: 'this', // Define the global object used,
   },
   module: {
     rules: [
@@ -28,12 +27,23 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
-      
     ],
   },
   externals: {
     // Specify external dependencies here
-    react: 'React',
-    'react-dom': 'ReactDOM',
+    react: {
+      // Provide the global variable name
+      commonjs: 'react', // CommonJS module format
+      commonjs2: 'react', // CommonJS module format (for Node.js)
+      amd: 'React', // AMD module format
+      root: 'React', // Global variable (when used in browser)
+    },
+    'react-dom': {
+      // Provide the global variable name
+      commonjs: 'react-dom', // CommonJS module format
+      commonjs2: 'react-dom', // CommonJS module format (for Node.js)
+      amd: 'ReactDOM', // AMD module format
+      root: 'ReactDOM', // Global variable (when used in browser)
+    },
   },
 };
