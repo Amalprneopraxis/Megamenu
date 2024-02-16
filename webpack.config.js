@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/Megamenu.js', // Path to your component entry file
   output: {
     path: path.resolve(__dirname, 'dist'), // Output directory
-    filename: 'Megamenu.bundle.js', // Output filename
+    filename: 'Megamenu.bundle.[chunkhash].js', // Output filename
     library: 'Megamenu', // Name of the library
     libraryTarget: 'umd', // Output module format
     umdNamedDefine: true, // Define the module's name for AMD
@@ -53,4 +53,7 @@ module.exports = {
       root: 'ReactDOM', // Global variable (when used in browser)
     },
   },
+  resolve: {
+    extensions: ['.js', '.jsx'] // Add this section to resolve .js and .jsx files without specifying the extension
+  }
 };
