@@ -14,14 +14,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-            plugins: [
-              ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }]
+            "presets": [
+              "@babel/preset-env", // Transpiles modern JavaScript features to be compatible with older browsers
+              "@babel/preset-react" // Transpiles JSX and other React-specific syntax
+            ],
+            "plugins": [
+              "@babel/plugin-proposal-class-properties", // Allows class properties syntax
+              "@babel/plugin-transform-runtime" // Helps with async/await and other features
             ]
           },
         },
