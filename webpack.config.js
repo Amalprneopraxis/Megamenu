@@ -30,6 +30,7 @@ module.exports = {
 
               "@babel/plugin-transform-react-jsx-self",
               "@babel/plugin-transform-react-jsx-source",
+              "@babel/plugin-syntax-dynamic-import",
             ]
           },
         },
